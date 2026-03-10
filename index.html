@@ -1,0 +1,159 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Simple Online Banking</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+
+<!-- REGISTER -->
+
+<div id="registerPage" class="card">
+
+<h2>Create Account</h2>
+
+<input type="text" id="regUsername" placeholder="Username">
+
+<input type="password" id="regPassword" placeholder="Password">
+
+<button onclick="register()">Register</button>
+
+<p class="link" onclick="showLogin()">Already have account? Login</p>
+
+</div>
+
+
+<!-- LOGIN -->
+
+<div id="loginPage" class="card hidden">
+
+<h2>Login</h2>
+
+<input type="text" id="loginUsername" placeholder="Username">
+
+<input type="password" id="loginPassword" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<p class="link" onclick="showRegister()">Create new account</p>
+
+</div>
+
+
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="hidden">
+
+
+<div class="header">
+
+<h2>Bank Dashboard</h2>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+</div>
+
+
+
+<div class="dashboard-cards">
+
+<div class="infoCard">
+<h3>Account Holder</h3>
+<p id="accountHolder"></p>
+</div>
+
+<div class="infoCard">
+<h3>Account Number</h3>
+<p id="accountNumber"></p>
+</div>
+
+<div class="infoCard">
+<h3>Balance</h3>
+<p>₹ <span id="balance"></span></p>
+</div>
+
+</div>
+
+
+
+<div class="actionButtons">
+
+<button onclick="showSection('depositBox')">Deposit</button>
+<button onclick="showSection('withdrawBox')">Withdraw</button>
+<button onclick="showSection('transferBox')">Transfer</button>
+<button onclick="showTransactions()">Transactions</button>
+
+</div>
+
+
+
+<div id="depositBox" class="actionBox hidden">
+
+<h3>Deposit Money</h3>
+
+<input type="number" id="depositAmount" placeholder="Enter Amount">
+
+<button onclick="deposit()">Deposit</button>
+
+</div>
+
+
+
+<div id="withdrawBox" class="actionBox hidden">
+
+<h3>Withdraw Money</h3>
+
+<input type="number" id="withdrawAmount" placeholder="Enter Amount">
+
+<button onclick="withdraw()">Withdraw</button>
+
+</div>
+
+
+
+<div id="transferBox" class="actionBox hidden">
+
+<h3>Transfer Money</h3>
+
+<input type="text" id="transferAccount" placeholder="Receiver Account Number">
+
+<input type="number" id="transferAmount" placeholder="Amount">
+
+<button onclick="transfer()">Transfer</button>
+
+</div>
+
+
+
+<h3>Transaction Summary</h3>
+
+<canvas id="transactionChart"></canvas>
+
+
+
+<h3>Transaction History</h3>
+
+<ul id="history"></ul>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
